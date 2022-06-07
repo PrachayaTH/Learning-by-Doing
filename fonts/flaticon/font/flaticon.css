@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 22/06/2020 05:16
+  	Creation date: 10/06/2020 01:23
   	*/
 
 @font-face {
@@ -25,7 +25,6 @@
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
   font-family: Flaticon;
-        speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -37,9 +36,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.flaticon-bear:before { content: "\f100"; }
-.flaticon-baby:before { content: "\f101"; }
-.flaticon-teach:before { content: "\f102"; }
-.flaticon-child:before { content: "\f103"; }
-.flaticon-certificate:before { content: "\f104"; }
-.flaticon-draw:before { content: "\f105"; }
+.flaticon-suitcase:before { content: "\f100"; }
+.flaticon-crosshair:before { content: "\f101"; }
+.flaticon-darts:before { content: "\f102"; }
+.flaticon-group:before { content: "\f103"; }
+.flaticon-discussion:before { content: "\f104"; }
+.flaticon-partnership-handshake:before { content: "\f105"; }
+.flaticon-strategy:before { content: "\f106"; }
+.flaticon-chess:before { content: "\f107"; }
+.flaticon-target:before { content: "\f108"; }

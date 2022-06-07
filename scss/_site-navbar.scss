@@ -1,42 +1,17 @@
 // MENU
-
-.top-bar {
-	a {
-		color: $white;
-	}
-}
 .logo {
 	font-size: 24px;
 	color: $white;
 	font-weight: 700;
-	left: 15px;
-	@include media-breakpoint-down(md) {
-		left: 20px;
-	}
 	&:hover {
 		color: $white;
 	}
 }
-.menu-absolute {
-	position: absolute!important;
-}
-.btn-book {
-	position: absolute;
-	right: 15px;
-	margin-top: -2px;
-	@include media-breakpoint-down(md) {
-		right: 60px;
-	}
-}
-
-
-
 .site-nav {
 	position: absolute;
 	width: 100%;
 	// left: 0;
-	z-index: 9;
-	top: 0;
+	z-index: 10;
 	a {
 		position: relative;
 		z-index: 9;
@@ -61,29 +36,34 @@
 
 				display: inline-block;
 				> a {
+					font-weight: 500;
 					font-size: 14px;
 					padding: 10px 15px;
 					display: inline-block;
 					text-decoration: none!important;
-					color: rgba($white, .5);
+					// color: rgba($white, .5);
 					position: relative;
 					
 					&:hover {
 						color: $white;
 						
 					}
+
+					&.active {
+						color: $primary;
+					}
 				}
 				
-				&.cta-button {
+				&.cta-button-outline {
 					a {
 						padding: 5px 22px;
 						border: 1px solid rgba($black, .1);
 						color: $black;
 						border-radius: 30px;
 						&:hover {
-							color: $white;
+							color: $black;
 							background: $white;
-							border-color: $white;
+							border-color: $black;
 						}
 					}
 					&.active {
@@ -91,6 +71,18 @@
 							color: $black;
 							background: $white;
 							border-color: $white;
+						}
+					}
+				}
+				&.cta-primary {
+					a {
+						padding: 5px 22px;
+						border: 1px solid transparent;
+						color: $white!important;
+						background: $primary;
+						border-radius: 30px;
+						&:hover {
+							
 						}
 					}
 				}
@@ -129,7 +121,7 @@
 					margin-left: 0px;
 					background: $white;
 					transition: 0.2s 0s;
-					
+
 					&.arrow-top {
 						position: absolute;
 
@@ -155,11 +147,12 @@
 					
 
 					a {
-						font-size: 14px;
+						font-size: 16px;
 						text-transform: none;
 						letter-spacing: normal;
 						transition: 0s all;
 						color: $black;
+						font-weight: 500;
 					}
 					.active {
 						
@@ -225,7 +218,7 @@
 						visibility: visible;
 						opacity: 1;
 
-						
+
 					}
 				}
 			}
@@ -237,13 +230,13 @@
 		}
 
 		.site-navigation {
-			
+
 			.site-menu {
 				
 				> li {
 
 					> a {
-						color: rgba($black, .5);
+						// color: rgba($black, .5);
 						
 						&:hover {
 							color: $black;
@@ -273,6 +266,51 @@
 						}
 					}
 				}
+			}
+		}
+
+	}
+
+
+	&.scrolled {
+		background-color: $white;
+		position: fixed;
+		width: 100%;
+		left: 0;
+		right: 0;
+		top: 0;
+		margin-top: -130px;
+		padding-top: 10px!important;
+		padding-bottom: 10px!important;
+		box-shadow: 0 4px 15px -5px rgba(0,0,0,.1);
+		&.awake {
+			margin-top: 0px;
+			transition: .3s all ease-out;
+		}
+		&.sleep {
+			transition: .3s all ease-out;	
+		}
+		
+		// .site-menu-toggle {
+		// 	color: $black;
+		// }
+
+		.site-navigation {
+			.site-menu {
+				li {
+					a {
+						color: $black;
+						&.active {
+							color: $primary;
+						}
+					}
+				}
+			}
+		}
+
+		.site-logo {
+			a {
+				color:$black!important;
 			}
 		}
 
@@ -400,11 +438,13 @@
 		li {
 			position: relative;
 			display: block;
-			&.active {
-				> a {
+			> a {
+				
+				&.active {
 					color: $primary;
 				}
 			}
+			
 		}
 		.arrow-collapse {
 			position: absolute;
@@ -496,7 +536,7 @@
 		.site-menu {
 			> li {
 				> a {
-					color: rgba($black, .8)!important;
+					// color: rgba($black, .8)!important;
 					&:hover, &.active {
 						color: $black!important;
 					}
@@ -539,53 +579,6 @@
 	.shrink {
 		padding-top: 0px!important;
 		padding-bottom: 0px!important;
-	}
-}
-
-
-.sticky-nav {
-	transition: .3s all ease;
-	background: transparent;
-}
-
-#sticky-wrapper {
-	&.is-sticky {
-		.sticky-nav {
-			padding-top: 10px;
-			padding-bottom: 10px;
-			background:  rgba($white, 1);
-			box-shadow: 4px 0 20px -5px rgba(0,0,0,.1);
-			-webkit-backdrop-filter: blur(1rem);
-			backdrop-filter: blur(1rem);
-
-			.burger:before, .burger span, .burger:after {
-				background: $black;
-				transition: .0s all ease;
-			}
-			// .site-navbar {
-			// 	background: $black;
-			// 	border-bottom: 1px solid transparent;
-			// 	box-shadow: 4px 0 20px -5px rgba(0,0,0,.1);
-			.logo { 
-				color: $black!important;
-			}
-			.site-menu {
-				> li {
-					> a {
-						color: $black!important;
-						&:hover, &.active {
-							color: $primary!important;
-						}
-					}
-					&.active {
-						a {
-							color: $primary!important;
-						}
-					}
-				}
-			}
-			// }
-		}
 	}
 }
 
@@ -645,14 +638,14 @@
 	-webkit-transform: rotate(45deg); 
 	-moz-transform: rotate(45deg);  
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=5); /*for IE*/
-  }
-  .burger.active:after {
-  	-webkit-transform: rotate(-45deg); 
-  	-moz-transform: rotate(-45deg);  
+}
+.burger.active:after {
+	-webkit-transform: rotate(-45deg); 
+	-moz-transform: rotate(-45deg);  
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=-5); /*for IE*/
-  }
-  .burger:focus {
-  	outline: none;
-  }
+}
+.burger:focus {
+	outline: none;
+}
 
 
